@@ -9,7 +9,7 @@ script:
   gradle build
 before_deploy:
   - mv build/libs/com-hy-0.0.1-SNAPSHOT.jar root.jar
-  - zip latest.jar root.jar
+  - zip latest.zip root.jar
   - test -d dp_upload || mkdir dp_upload
   - mv latest.zip dp_upload/latest.zip
 deploy:
