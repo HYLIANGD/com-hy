@@ -24,8 +24,7 @@ deploy:
     bucket: "hyl-emp"
   - provider: codedeploy
     access_key_id: CODEDEPLOY_AWS_ACCESS_KEY_ID
-    secret_access_key:
-      secure: CODEDEPLOY_AWS_SECRET_ACCESS_KEY_ID
+    secret_access_key: CODEDEPLOY_AWS_SECRET_ACCESS_KEY_ID
     bucket: "hyl-emp"
     key: latest.zip
     application: hyl-p1
