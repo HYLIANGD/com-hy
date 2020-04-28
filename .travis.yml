@@ -14,17 +14,17 @@ before_deploy:
   - mv latest.zip dp_upload/latest.zip
 deploy:
   - provider: s3
-    access_key_id: S3_AWS_ACCESS_KEY_ID
+    access_key_id: TRAVIS_AWS_ACCESS_KEY_ID
     secret_access_key:
-      secure: S3_AWS_SECRET_ACCESS_KEY_ID
+      secure: TRAVIS_AWS_ACCESS_KEY_ID
     local_dir: dp_upload
     skip_cleanup: true
     on:
       branch: master
     bucket: "hyl-emp"
   - provider: codedeploy
-    access_key_id: CODEDEPLOY_AWS_ACCESS_KEY_ID
-    secret_access_key: CODEDEPLOY_AWS_SECRET_ACCESS_KEY_ID
+    access_key_id: TRAVIS_AWS_ACCESS_KEY_ID
+    secret_access_key: TRAVIS_AWS_ACCESS_KEY_ID
     bucket: "hyl-emp"
     key: latest.zip
     application: hyl-p1
