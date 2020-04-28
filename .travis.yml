@@ -22,6 +22,7 @@ deploy:
     on:
       branch: master
     bucket: "hyl-emp"
+    region: us-west-2
   - provider: codedeploy
     access_key_id: $TRAVIS_AWS_ACCESS_KEY_ID
     secret_access_key: $TRAVIS_AWS_SECRET_ACCESS_KEY_ID
