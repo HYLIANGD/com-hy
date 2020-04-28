@@ -28,7 +28,7 @@ deploy:
     bucket: "hyl-emp"
     key: latest.zip
     application: hyl-p1
-    deployment_group: master
+    deployment_group: hyl-p1
     region: us-west-2
     on:
       branch: master
