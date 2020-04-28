@@ -8,6 +8,6 @@ public class EzController {
 	
 	@RequestMapping("")
 	public String test() {
-		return "OK";
+		return "AWS!";
 	}
 }

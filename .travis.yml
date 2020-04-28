@@ -2,9 +2,37 @@ sudo: required #is required to use docker service in travis
 language: java
 jdk:
   - openjdk8
+before_script:
+  export TRAVIS_AWS_ACCESS_KEY_ID=$TRAVIS_ACCESS_KEY_ID;
+  export TRAVIS_AWS_SECRET_ACCESS_KEY_ID=$TRAVIS_SECRET_ACCESS_KEY_ID;
 script:
-  - gradle build
-after_success:
+  gradle build
+before_deploy:
+  mv build/libs/com-hy-0.0.1-SNAPSHOT.jar root.jar
+  zip latest.jar root.jar
+  test -d dp_upload || mkdir dp_upload
+  mv latest.zip dp_upload/latest.zip
+deploy:
+  - provider: s3
+    access_key_id: S3_AWS_ACCESS_KEY_ID
+    secret_access_key:
+      secure: S3_AWS_SECRET_ACCESS_KEY_ID
+    local_dir: dp_upload
+    skip_cleanup: true
+    on:
+      branch: master
+    bucket: "hyl-emp"
+  - provider: codedeploy
+    access_key_id: CODEDEPLOY_AWS_ACCESS_KEY_ID
+    secret_access_key:
+      secure: CODEDEPLOY_AWS_SECRET_ACCESS_KEY_ID
+    bucket: "hyl-emp"
+    key: latest.zip
+    application: hyl-p1
+    deployment_group: master
+    region: us-west-2
+    on:
+      branch: master
 
 
 notifications:
