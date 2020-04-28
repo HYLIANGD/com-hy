@@ -27,7 +27,7 @@ deploy:
     secret_access_key: $TRAVIS_AWS_SECRET_ACCESS_KEY_ID
     bucket: "hyl-emp"
     key: latest.zip
-    application: hyl-p1-master
+    application: hyl-p1
     deployment_group: master
     region: us-west-2
     on:
