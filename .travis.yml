@@ -15,8 +15,7 @@ before_deploy:
 deploy:
   - provider: s3
     access_key_id: $TRAVIS_AWS_ACCESS_KEY_ID
-    secret_access_key:
-      secure: $TRAVIS_AWS_SECRET_ACCESS_KEY_ID
+    secret_access_key: $TRAVIS_AWS_SECRET_ACCESS_KEY_ID
     local_dir: dp_upload
     skip_cleanup: true
     on:
@@ -28,7 +27,7 @@ deploy:
     secret_access_key: $TRAVIS_AWS_SECRET_ACCESS_KEY_ID
     bucket: "hyl-emp"
     key: latest.zip
-    application: hyl-p1
+    application: hyl-p1-master
     deployment_group: master
     region: us-west-2
     on:
