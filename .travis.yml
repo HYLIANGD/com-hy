@@ -8,8 +8,10 @@ before_script:
 script:
   gradle build
 after_success:
-  - mv build/libs/com-hy-0.0.1-SNAPSHOT.jar root.jar
-  - zip latest.zip root.jar
+  - mv build/libs/com-hy-0.0.1-SNAPSHOT.jar app.jar
+  - zip latest.zip app.jar
+  - zip -u latest.zip script/*
+  - zip -u latest.zip appspec.yml
   - test -d dp_upload || mkdir dp_upload
   - mv latest.zip dp_upload/latest.zip
 deploy:
