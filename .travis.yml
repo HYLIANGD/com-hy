@@ -2,6 +2,8 @@ sudo: required #is required to use docker service in travis
 language: java
 jdk:
   - openjdk8
+install:
+  - true
 before_script:
   - export TRAVIS_AWS_ACCESS_KEY_ID=$TRAVIS_ACCESS_KEY_ID;
   - export TRAVIS_AWS_SECRET_ACCESS_KEY_ID=$TRAVIS_SECRET_ACCESS_KEY_ID;
