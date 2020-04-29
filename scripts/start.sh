@@ -1,1 +1,1 @@
-java -jar -Dserver.port=8080 com-hy-0.0.1-SNAPSHOT.jar > /dev/null 2>&1 &
+java -jar -Dserver.port=8080 /usr/bin/hylapp/app.jar > /dev/null 2>&1 &
