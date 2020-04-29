@@ -13,6 +13,6 @@ public class EzController {
 	
 	@RequestMapping("")
 	public String test() {
-		return "AWS!" + env.getProperty("OneDrive");
+		return "AWS!" + env.getProperty("hyl");
 	}
 }
