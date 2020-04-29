@@ -11,6 +11,6 @@ hooks:
   BeforeInstall:
     - location: scripts/prepare.sh
       timeout: 60
-  ApplicationStart:s
+  ApplicationStart:
     - location: scripts/start.sh
       timeout: 300
