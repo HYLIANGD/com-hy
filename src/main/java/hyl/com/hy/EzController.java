@@ -13,6 +13,6 @@ public class EzController {
 	
 	@RequestMapping("")
 	public String test() {
-		return "AWS!" + env.getProperty("PATH") + "||||" + env.getProperty("/EC2/hyl-emp/REDISURL");
+		return "AWS!" + env.getProperty("PATH") + "||||" + env.getProperty("REDISURL");
 	}
 }
