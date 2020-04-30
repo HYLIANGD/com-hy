@@ -14,6 +14,7 @@ public class EzwebApplication {
 	private static final String PROPERTIES_PREFIX = "/EC2/hyl-emp";
 	
 	public static void main(String[] args) {
+		init();
 		SpringApplication.run(EzwebApplication.class, args);
 	}
 	
