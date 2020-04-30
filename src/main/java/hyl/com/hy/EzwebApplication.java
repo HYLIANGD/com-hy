@@ -21,7 +21,7 @@ public class EzwebApplication {
 		
 		AWSSimpleSystemsManagement ssmClient = AWSSimpleSystemsManagementClientBuilder.defaultClient();
 		ssmClient.getParametersByPath(new GetParametersByPathRequest().withPath(PROPERTIES_PREFIX)).getParameters().forEach(p -> {
-			System.setProperty(p.getName().substring(PROPERTIES_PREFIX.length()), p.getValue());
+			System.setProperty(p.getName().substring(PROPERTIES_PREFIX.length() + 1), p.getValue());
 		});
 		System.setProperty("org.apache.el.parser.SKIP_IDENTIFIER_CHECK", "true");
 	}
